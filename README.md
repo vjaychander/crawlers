@@ -23,6 +23,8 @@ obj.get_comments(module=None, chapter=None)
 
 #comments of all chapters
 obj.get_comments()
+
+#output: https://drive.google.com/drive/folders/1HWl3g35me7HLE8Cq4ZJoQXnBXuFKtmJ6?usp=sharing
 ```
 
 ##### Note: I've skipped the Chapter-1 of Module-6 since the html is different
