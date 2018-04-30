@@ -9,7 +9,6 @@ from collections import OrderedDict
 import requests
 from bs4 import BeautifulSoup
 
-
 class Zerodha(object):
     """Main class"""
     def __init__(self, url):
@@ -24,9 +23,10 @@ class Zerodha(object):
         self.modules = self._get_modules()
 
     def get_comments(self, module=None, chapter=None):
-        """ Function to crawl the comments
-		    Args: Module, Chapter
-		"""
+        """ 
+        Function to crawl the comments
+        Args: Module, Chapter
+        """
 
         if module:
             if chapter:
@@ -64,12 +64,11 @@ class Zerodha(object):
             modules_dict[count+1] = dict(url=link["href"], title=link.text, chapters=chapters)
             print "Module %s -" %str(count+1), link.text, " [Chapters - %s]" % len(chapters)
             print
-
         return modules_dict
 
     def _get_chapters(self, module):
         """ Returns module chapters as a list"""
-
+		
         content = requests.get(module)
 
         # module page
@@ -158,9 +157,6 @@ class Zerodha(object):
                 self._load_comment_section(comment.ul, level)
 
 
-URL = r"https://zerodha.com/varsity"
-
 if "__name__" == "__main__":
-
-    obj = Zerodha(URL)
+    obj = Zerodha(r"https://zerodha.com/varsity")
     obj.get_comments()
