@@ -162,5 +162,5 @@ URL = r"https://zerodha.com/varsity"
 
 if "__name__" == "__main__":
 
-    INSTANCE = Zerodha(URL)
-    INSTANCE.get_comments()
+    obj = Zerodha(URL)
+    obj.get_comments()
