@@ -12,13 +12,12 @@ from collections import OrderedDict
 
 class Zerodha(object):
     """Main class"""
+    
     def __init__(self, url):
-
-        if not os.path.exists("zerodha"):
+        
+        if not os.path.isdir("zerodha"):
             os.mkdir("zerodha")
-        else:
-            self.path = os.path.abspath("zerodha")
-
+        self.path = os.path.abspath("zerodha")
         self.url = url
         self._handler = None
         self.modules = self._get_modules()
