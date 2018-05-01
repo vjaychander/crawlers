@@ -8,7 +8,6 @@ import sys
 from collections import OrderedDict
 import requests
 from bs4 import BeautifulSoup
-from collections import OrderedDict
 
 class Zerodha(object):
     """Main class"""
