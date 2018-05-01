@@ -5,8 +5,6 @@ import requests
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 
-url = r"https://zerodha.com/varsity"
-
 class Zerodha(object):
 
     def __init__(self, url):
@@ -145,6 +143,6 @@ class Zerodha(object):
             if comment.ul:
                 self._load_comment_section(comment.ul, level)
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     obj = Zerodha(url)
     obj.get_comments()
