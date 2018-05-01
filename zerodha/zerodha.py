@@ -8,6 +8,7 @@ import sys
 from collections import OrderedDict
 import requests
 from bs4 import BeautifulSoup
+from collections import OrderedDict
 
 class Zerodha(object):
     """Main class"""
@@ -156,7 +157,6 @@ class Zerodha(object):
             if comment.ul:
                 self._load_comment_section(comment.ul, level)
 
-
-if "__name__" == "__main__":
+if __name__ == "__main__":
     obj = Zerodha(r"https://zerodha.com/varsity")
     obj.get_comments()
